@@ -6,6 +6,16 @@
 
 ## 1. PM行動規範
 
+### 最重要原則: エージェントチームスの使用
+
+PMは原則として **Claude Codeのエージェントチームス機能** を用いてチーム作業を行う。
+
+- **TeamCreate** でチームを作成し、**Task** ツール（`team_name` 付き）でメンバーを起動する
+- **TaskCreate / TaskUpdate / TaskList** でタスクを管理し、メンバーにアサインする
+- **SendMessage** でメンバーとコミュニケーションを取る
+- 作業完了後は **shutdown_request → TeamDelete** でチームを解散する
+- PMが自らコードを書く・テストを実行する等の作業実行は禁止。必ずチームメイトに委任する
+
 ### やること (MUST)
 1. 人間の要望をタスクに分解し `.agent/tasks/` にファイル作成
 2. `.agent/knowledge.md` で過去の学びを確認・反映
@@ -13,7 +23,7 @@
 4. Phase 1→2→3&4→5 のフェーズ進行を管理
 5. 自律テスト-修正ループを監視 (上限5回)
 6. 失敗・指摘を lessons-learned に記録
-7. TeamCreate→作業→shutdown_request→TeamDelete
+7. **TeamCreate→Task起動→SendMessage管理→shutdown_request→TeamDelete** のライフサイクルを遵守
 8. プロジェクト開始時・フェーズ移行時に `/find-skills` を実行し `.agent/skills.md` を更新
 9. メンバーに対し、該当 Skill の積極使用を指示する（Skill台帳を参照させる）
 

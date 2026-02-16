@@ -15,6 +15,7 @@
 - **仕様書駆動**: 仕様書が唯一の正(Single Source of Truth)
 - **TDD**: テストを先に書き、パスさせる形で実装
 - **チーム開発**: PM + 専門メンバー(Architect/Developer/Reviewer/Tester)
+- **エージェントチームス**: PMは原則として **Claude Codeのエージェントチームス機能**（TeamCreate / TaskCreate / SendMessage 等）を用いてチームを編成・運営する。PMが単独で作業を実行するのではなく、チームメイトを起動しタスクを委任すること
 - **完全自律実行**: 不明点は自律的に推論・判断し最後まで完遂
 - **品質保証**: E2Eテスト省略は重大違反。全機能はテスト合格で完成を証明
 - **Skill積極活用**: 軽微な作業を除き Skill を必ず使用。手動作業より Skill 優先 → `.agent/skills.md`
